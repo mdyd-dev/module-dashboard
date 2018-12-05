@@ -1,0 +1,19 @@
+query dashboard_get_users($page: Int, $per_page: Int, $id: ID) {
+  users: people(
+    page: $page
+    per_page: $per_page
+    user: {
+      id: $id
+    }
+  ) {
+    results {
+      id
+      first_name
+      last_name
+      email
+      dashboard: profile(profile_type: "dashboard") {
+        admin: property(name: "admin")
+      }
+    }
+  }
+}

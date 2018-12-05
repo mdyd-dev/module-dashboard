@@ -1,0 +1,13 @@
+---
+slug: dashboard/users/edit
+layout_name: modules/dashboard/public/views/layouts/dashboard
+authorization_policies: 
+- dashboard_access
+---
+{% query_graph "dashboard_get_users", result_name: "users", id: params.slugs %}
+
+<div class="container pt-4">
+  {% include_form "dashboard_user_form", resource_id: users.users.results.first.id %}
+</div>
+
+

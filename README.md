@@ -1,7 +1,8 @@
 ### POS Dashboard is Administration panel for POS ###
 
-Consit of: 
-* user management
+List of features:
+
+* user management, roles
 
 ### Installation ###
 

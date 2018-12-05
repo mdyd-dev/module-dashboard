@@ -1,0 +1,11 @@
+query dashboard_current_user {
+  current_user {
+    id
+    slug
+    first_name
+    email
+    dashboard: profile(profile_type: "dashboard") {
+      admin: property(name: "admin")
+    }
+  }
+}

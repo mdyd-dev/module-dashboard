@@ -1,6 +1,7 @@
 ---
 name: dashboard_user_form
 resource: User
+resource_owner: anyone
 redirect_to: "/dashboard/users/edit/{{ form.id }}"
 flash_notice: "You've successfuly edited user"
 configuration:
@@ -16,7 +17,7 @@ configuration:
   profiles:
     dashboard:
       properties:
-        admin: 
+        admin:
           validation: {}
 default_payload: ''
 ---

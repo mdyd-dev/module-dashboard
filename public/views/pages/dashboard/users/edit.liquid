@@ -1,13 +1,14 @@
 ---
 slug: dashboard/users/edit
 layout_name: modules/dashboard/public/views/layouts/dashboard
-authorization_policies: 
+authorization_policies:
 - dashboard_access
 ---
 {% query_graph "dashboard_get_users", result_name: "users", id: params.slugs %}
+{% assign user_id = users.users.results.first.id %}
 
 <div class="container pt-4">
-  {% include_form "dashboard_user_form", resource_id: users.users.results.first.id %}
+  {% include_form "dashboard_user_form", resource_id: user_id %}
 </div>
 
 

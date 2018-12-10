@@ -1,14 +1,26 @@
-  <script type="text/javascript">
-    window.__cdnUrl = function() { return "{{ '' | asset_url }}" };
-  </script>
-  <script src="{{ 'dashboard/dashboard/javascripts/jquery.js' | asset_url }}"></script>
-  <script src="{{ 'dashboard/dashboard/javascripts/bootstrap.min.js' | asset_url }}"></script>
-  <script src="{{ 'dashboard/dashboard/javascripts/poper.min.js' | asset_url }}"></script>
-  <script src="{{ 'dashboard/dashboard/javascripts/dashboard.js' | asset_url }}"></script>
-  <script src="{{ 'dashboard-blog/blog/manifest.js' | asset_url }}"></script>
-  <script src="{{ 'dashboard-blog/blog/admin.js' | asset_url }}"></script>
-  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-  <script>
-    feather.replace()
-  </script>
+<script type="text/javascript">
+  window.__cdnUrl = function() { return "{{ '' | asset_url }}" };
+</script>
+<script src="{{ 'dashboard/dashboard/javascripts/jquery.js' | asset_url }}"></script>
+<script src="{{ 'dashboard/dashboard/javascripts/bootstrap.min.js' | asset_url }}"></script>
+<script src="{{ 'dashboard/dashboard/javascripts/poper.min.js' | asset_url }}"></script>
+<script src="{{ 'dashboard/dashboard/javascripts/dashboard.js' | asset_url }}"></script>
+<script src="{{ 'dashboard-blog/blog/manifest.js' | asset_url }}"></script>
+<script src="{{ 'dashboard-blog/blog/admin.js' | asset_url }}"></script>
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+<script type="text/javascript">
+  var deleteLinks = document.querySelectorAll('[data-confirmation]');
 
+  for (var i = 0; i < deleteLinks.length; i++) {
+    deleteLinks[i].addEventListener('click', function(event) {
+        var choice = confirm(this.getAttribute('data-confirmation'));
+
+        if (choice == false) {
+          event.preventDefault();
+        }
+    });
+  }
+</script>

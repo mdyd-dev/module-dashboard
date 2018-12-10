@@ -22,11 +22,15 @@
   <body>
     {%- query_graph 'dashboard_current_user', result_name: dashboard_current_user -%}
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/dashboard">Dashboard</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Home</a>
       {% comment %} <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> {% endcomment %}
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="/log-out">{{dashboard_current_user.current_user.first_name }} - Sign out</a>
+<ul class="nav navbar-nav flex-row float-right">
+        <li class="nav-item p-2 text-light">
+{{ dashboard_current_user.current_user.first_name }}
+        </li>
+        <li class="nav-item text-nowrap text-light">
+
+ {% include_form "log_out" %}
         </li>
       </ul>
     </nav>
@@ -35,7 +39,7 @@
       <div class="row">
         {% include 'modules/dashboard/public/views/partials/layout/sidebar' %}
 
-        <main role="main" class="container col-md-9 ml-sm-auto col-lg-10 px-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           {{ content_for_layout }}
         </main>
       </div>

@@ -6,6 +6,8 @@ query dashboard_get_users($page: Int, $per_page: Int, $id: ID) {
       id: $id
     }
   ) {
+    total_entries
+    total_pages
     results {
       id
       first_name

@@ -1,6 +1,6 @@
 ---
 slug: dashboard/users/edit
-layout_name: modules/dashboard/public/views/layouts/dashboard
+layout_name: modules/dashboard/dashboard
 authorization_policies:
 - dashboard_access
 ---
@@ -8,7 +8,5 @@ authorization_policies:
 {% assign user_id = users.users.results.first.id %}
 
 <div class="container pt-4">
-  {% include_form "dashboard_user_form", resource_id: user_id %}
+  {% include_form "modules/dashboard/user_form", resource_id: user_id %}
 </div>
-
-

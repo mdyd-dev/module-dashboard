@@ -30,14 +30,14 @@
         </li>
         <li class="nav-item text-nowrap text-light">
 
- {% include_form "log_out" %}
+ {% include_form "modules/signup/log_out" %}
         </li>
       </ul>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
-        {% include 'modules/dashboard/public/views/partials/layout/sidebar' %}
+        {% include 'modules/dashboard/layout/sidebar' %}
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           {{ content_for_layout }}
@@ -45,6 +45,6 @@
       </div>
     </div>
 
-    {% include 'modules/dashboard/public/views/layouts/dashboard/javascripts' %}
+    {% include 'modules/dashboard/layouts/dashboard/javascripts' %}
   </body>
 </html>

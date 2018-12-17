@@ -1,5 +1,5 @@
 ---
-name: dashboard_user_form
+name: user_form
 resource: User
 resource_owner: anyone
 redirect_to: "/dashboard/users"
@@ -22,7 +22,7 @@ configuration:
 default_payload: ''
 ---
 {% form html-novalidate: false %}
-  {% include 'modules/utils/public/views/partials/utils' %}
+  {% include 'modules/utils/utils' %}
   {% include form_errors %}
 
   {% include input with f.first_name, type: "text" %}

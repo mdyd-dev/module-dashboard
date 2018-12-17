@@ -4,8 +4,8 @@
 
 {% assign pagination_per_page = params.per_page | default: 15 | plus: 0 %}
 {% assign pagination_page = params.page | default: 1 | plus: 0 %}
-{% 
-  query_graph "dashboard_get_users", result_name: "users",
+{%
+  query_graph "modules/dashboard/dashboard_get_users", result_name: "users",
   per_page: pagination_per_page,
   page: pagination_page
 %}

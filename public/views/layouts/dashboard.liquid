@@ -10,27 +10,26 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ 'dashboard/dashboard/stylesheets/bootstrap.min.css' | asset_url }}" rel="stylesheet">
-    <link href="{{ 'dashboard/dashboard/stylesheets/dashboard.css' | asset_url }}" rel="stylesheet">
+    <link href="{{ 'modules/dashboard/stylesheets/bootstrap.min.css' | asset_url }}" rel="stylesheet">
+    <link href="{{ 'modules/dashboard/stylesheets/dashboard.css' | asset_url }}" rel="stylesheet">
 {% comment %}Blog Styles  {% endcomment %}
-    <link rel="stylesheet" media="screen" href="{{ 'dashboard-blog/blog/admin-vendor.css' | asset_url }}">
+    <link rel="stylesheet" media="screen" href="{{ 'modules/dashboard-blog/blog/admin-vendor.css' | asset_url }}">
     <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
 
     {% yield 'head_content' %}
   </head>
 
   <body>
-    {%- query_graph 'dashboard_current_user', result_name: dashboard_current_user -%}
+    {%- query_graph 'modules/dashboard/dashboard_current_user', result_name: dashboard_current_user -%}
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Home</a>
       {% comment %} <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> {% endcomment %}
-<ul class="nav navbar-nav flex-row float-right">
+      <ul class="nav navbar-nav flex-row float-right">
         <li class="nav-item p-2 text-light">
-{{ dashboard_current_user.current_user.first_name }}
+          {{ dashboard_current_user.current_user.first_name }}
         </li>
         <li class="nav-item text-nowrap text-light">
-
- {% include_form "modules/signup/log_out" %}
+          {% include_form "modules/signup/log_out" %}
         </li>
       </ul>
     </nav>

@@ -1,10 +1,10 @@
 ---
 slug: dashboard/users/edit
-layout_name: modules/dashboard/dashboard
+layout_name: modules/dashboard/layouts/dashboard
 authorization_policies:
-- dashboard_access
+- "modules/dashboard/dashboard_access"
 ---
-{% query_graph "dashboard_get_users", result_name: "users", id: params.slugs %}
+{% query_graph "modules/dashboard/dashboard_get_users", result_name: "users", id: params.slugs %}
 {% assign user_id = users.users.results.first.id %}
 
 <div class="container pt-4">

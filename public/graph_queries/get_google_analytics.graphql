@@ -1,0 +1,10 @@
+query get_google_analytics {
+  customizations {
+    total_entries
+    total_pages
+    results {
+      id
+      property(name: "tracking_code")
+    }
+  }
+}

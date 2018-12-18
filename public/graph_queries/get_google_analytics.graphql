@@ -1,10 +1,10 @@
 query get_google_analytics {
-  customizations {
+  customizations(is_deleted: false, name: "google_analytics") {
     total_entries
     total_pages
     results {
       id
-      property(name: "tracking_code")
+      tracking_id: property(name: "tracking_id")
     }
   }
 }

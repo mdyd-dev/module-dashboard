@@ -5,8 +5,18 @@ authorization_policies:
 - "modules/dashboard/dashboard_access"
 ---
 {% query_graph "modules/dashboard/get_google_analytics", result_name: "ga" %}
-{% assign ga_id = ga.customizations.results.first.id %}
-
+{% assign ga_id = ga.customizations.results.last.id %}
 <div class="container pt-4">
-  {% include_form "modules/dashboard/google_analytics_form", resource_type: "module/dashboard/google_analytics" %}
+  {%
+    include_form "modules/dashboard/google_analytics_form",
+    resource_type: "google_analytics",
+    resource_id: ga_id
+  %}
+  {% if ga_id != blank and false %}
+    {%
+      include_form "modules/dashboard/delete_google_analytics_form",
+      resource_type: "google_analytics",
+      resource_id: ga_id
+    %}
+  {% endif %}
 </div>

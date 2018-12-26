@@ -1,9 +1,10 @@
 <script type="text/javascript">
   window.__cdnUrl = function() { return "{{ '' | asset_url }}" };
 </script>
+<script src="{{ 'modules/dashboard/javascripts/poper.min.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard/javascripts/jquery.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard/javascripts/bootstrap.min.js' | asset_url }}"></script>
-<script src="{{ 'modules/dashboard/javascripts/poper.min.js' | asset_url }}"></script>
+<script src="{{ 'modules/dashboard/javascripts/bootstrap-select.min.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard/javascripts/dashboard.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard-blog/blog/manifest.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard-blog/blog/admin.js' | asset_url }}"></script>
@@ -23,4 +24,10 @@
         }
     });
   }
+  
+  $.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
+
 </script>
+
+
+

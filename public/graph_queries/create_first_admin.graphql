@@ -1,0 +1,20 @@
+mutation crate_first_admin($id: ID) {
+  user_update (
+    id: $id
+    form_configuration_name: "modules/dashboard/user_form"
+    user: {
+      profiles: [
+        {
+          name: "dashboard"
+          values: {
+            properties: [
+              { name: "admin", value: "1" }
+            ]
+          }
+        }
+      ]
+    }
+  ) {
+    id
+  }
+}

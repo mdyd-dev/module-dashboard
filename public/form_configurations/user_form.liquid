@@ -22,15 +22,18 @@ configuration:
 default_payload: ''
 ---
 {% form html-novalidate: false %}
-  {% include 'modules/utils/utils' %}
-  {% include form_errors %}
+  {% parse_json "utils" %}
+    {% include 'modules/utils/init' %}
+  {% endparse_json %}
+  {% include utils.form_errors %}
+  {%- assign f = form_builder.fields -%}
 
-  {% include input with f.first_name, type: "text" %}
-  {% include input with f.last_name, type: "text" %}
-  {% include input with f.email, type: 'email' %}
+  {% include utils.input with f.first_name, type: "text" %}
+  {% include utils.input with f.last_name, type: "text" %}
+  {% include utils.input with f.email, type: 'email' %}
 
-  {% include input with f.profiles.dashboard.properties.admin, type: 'checkbox' %}
+  {% include utils.input with f.profiles.dashboard.properties.admin, type: 'checkbox' %}
 
-  {% include submit_tag with "Save", class: "btn btn-primary btn-lg" %}
+  {% include utils.submit_tag with "Save", class: "btn btn-primary btn-lg" %}
 
 {% endform %}

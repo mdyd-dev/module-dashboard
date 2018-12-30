@@ -1,3 +1,5 @@
+{% comment %} TODO rewrite to weback {% endcomment %}
+
 <script type="text/javascript">
   window.__cdnUrl = function() { return "{{ '' | asset_url }}" };
 </script>
@@ -6,11 +8,16 @@
 <script src="{{ 'modules/dashboard/javascripts/bootstrap.min.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard/javascripts/bootstrap-select.min.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard/javascripts/dashboard.js' | asset_url }}"></script>
-<script src="{{ 'modules/dashboard-blog/blog/manifest.js' | asset_url }}"></script>
 <script src="{{ 'modules/dashboard-blog/blog/admin.js' | asset_url }}"></script>
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
   feather.replace()
+</script>
+<script src="{{ 'modules/dashboard/javascripts/trumbowyg.js' | asset_url }}"></script>
+{% assign icons = 'modules/dashboard/images/icons.svg' | asset_url %}
+<script type="text/javascript">
+  $.trumbowyg.svgPath = '{{ icons }}';
+  $('[data-wysiwyg]').trumbowyg();
 </script>
 <script type="text/javascript">
   var deleteLinks = document.querySelectorAll('[data-confirmation]');
@@ -24,7 +31,7 @@
         }
     });
   }
-  
+
   $.fn.selectpicker.Constructor.DEFAULTS.multipleSeparator = ', ';
 
 </script>

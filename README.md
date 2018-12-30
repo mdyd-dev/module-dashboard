@@ -6,7 +6,33 @@ List of features:
 
 ### Installation ###
 
+#### dependencies
+Dashboard modules has two dependencies, please install them first
+* utils
+* signup
+
 install as module to modules/ directory of your projcet
+
+### Enabling features
+* Google analytics - make sure to include partial in your frontend layout or desired pages:
+
+```
+{% include "modules/dashboard/google_analytics" %}
+```
+
+### Useage
+
+After installation go do `/sign-up` path in your website and create first user.
+
+Then create and execute migration to give administrative access to your user:
+
+```
+{% query_graph "modules/dashboard/get_users" %}
+{% assign user_id = g.users.results.first.id %}
+{% execute_query "modules/dashboard/create_first_admin", id: user_id %}
+```
+
+Log in as your adminstrator and enjoy your dashboard.
 
 ### Contribution guidelines ###
 

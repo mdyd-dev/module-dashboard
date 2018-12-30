@@ -1,5 +1,5 @@
 {% parse_json "_utils" %}
-  {% include 'modules/utils/config' %}
+  {% include 'modules/utils/init' %}
 {% endparse_json %}
 
 {% assign pagination_per_page = params.per_page | default: 15 | plus: 0 %}

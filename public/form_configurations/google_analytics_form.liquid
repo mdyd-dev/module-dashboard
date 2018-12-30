@@ -11,8 +11,10 @@ configuration:
 default_payload: ''
 ---
 {% form html-novalidate: false %}
-  {% include 'modules/utils/utils' %}
-  {% include form_errors %}
-  {% include input with f.properties.tracking_id, type: "text", label: "Tracking ID" %}
-  {% include submit_tag with "Save", class: "btn btn-primary" %}
+  {% parse_json "utils" %}
+    {% include 'modules/utils/init' %}
+  {% endparse_json %}
+  {% include utils.form_errors %}
+  {% include utils.input with form_builder.fields.properties.tracking_id, type: "text", label: "Tracking ID" %}
+  {% include utils.submit_tag with "Save", class: "btn btn-primary" %}
 {% endform %}

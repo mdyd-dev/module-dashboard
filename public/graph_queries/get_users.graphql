@@ -1,5 +1,5 @@
 query get_users($page: Int, $per_page: Int, $id: ID, $email: String) {
-  users: people(page: $page, per_page: $per_page, user: {id: $id, email: $email}) {
+  users: people(sort: [{name: "id", order: "desc"}],page: $page, per_page: $per_page, user: {id: $id, email: $email}) {
     total_entries
     total_pages
     results {

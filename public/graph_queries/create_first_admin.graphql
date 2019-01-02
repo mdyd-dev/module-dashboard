@@ -16,5 +16,9 @@ mutation crate_first_admin($id: ID) {
     }
   ) {
     id
+    email
+    profile(profile_type: "dashboard") {
+      properties
+    }
   }
 }

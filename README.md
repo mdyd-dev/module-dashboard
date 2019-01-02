@@ -27,7 +27,8 @@ After installation go do `/sign-up` path in your website and create first user.
 Then create and execute migration to give administrative access to your user:
 
 ```
-{% query_graph "modules/dashboard/get_users" %}
+{% assign email = [YOUR_USER_EMAIL] %}
+{% query_graph "modules/dashboard/get_users", email: email %}
 {% assign user_id = g.users.results.first.id %}
 {% execute_query "modules/dashboard/create_first_admin", id: user_id %}
 ```

@@ -4,9 +4,11 @@ layout_name: modules/dashboard/layouts/dashboard
 authorization_policies:
 - "modules/dashboard/dashboard_access"
 ---
-{% query_graph "modules/dashboard/dashboard_get_users", result_name: "users", id: params.slugs %}
+{% query_graph "modules/dashboard/get_users", result_name: "users", id: params.slugs %}
 {% assign user_id = users.users.results.first.id %}
 
 <div class="container pt-4">
-  {% include_form "modules/dashboard/user_form", resource_id: user_id %}
+  <div class="col-lg-6 col-md-8 col-sm-12 col-12">
+    {% include_form "modules/dashboard/user_form", resource_id: user_id %}
+  </div>
 </div>

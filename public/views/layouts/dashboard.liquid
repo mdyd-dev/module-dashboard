@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="shortcut icon" href="{{ 'images/favicon.ico' | asset_url }}" type="image/x-icon">
 
-    <title>Dashboard Template for Bootstrap</title>
+    {%- include 'modules/dashboard/layouts/dashboard/meta-title' -%}
 
     <!-- Bootstrap core CSS -->
     <link href="{{ 'modules/dashboard/stylesheets/bootstrap.min.css' | asset_url }}" rel="stylesheet">

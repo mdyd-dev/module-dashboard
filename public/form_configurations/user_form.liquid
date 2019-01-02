@@ -25,7 +25,7 @@ default_payload: ''
   {% parse_json "utils" %}
     {% include 'modules/utils/init' %}
   {% endparse_json %}
-  {% include utils.form_errors %}
+  {%- include utils.form_errors -%}
   {%- assign f = form_builder.fields -%}
 
   {% include utils.input with f.first_name, type: "text" %}

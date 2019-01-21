@@ -1,6 +1,6 @@
 ---
 slug: dashboard/google_analytics
-layout_name: modules/dashboard/layouts/dashboard
+layout_name: modules/dashboard/dashboard
 authorization_policies:
 - "modules/dashboard/dashboard_access"
 ---
@@ -10,13 +10,11 @@ authorization_policies:
   <div class="col-lg-6 col-md-8 col-sm-12 col-12">
     {%
       include_form "modules/dashboard/google_analytics_form",
-      resource_type: "google_analytics",
       resource_id: ga_id
     %}
     {% if ga_id != blank and false %}
       {%
         include_form "modules/dashboard/delete_google_analytics_form",
-        resource_type: "google_analytics",
         resource_id: ga_id
       %}
     {% endif %}

@@ -4,7 +4,7 @@ query dashboard_current_user {
     slug
     first_name
     email
-    dashboard: profile(profile_type: "dashboard") {
+    dashboard: profile(profile_type: "modules/dashboard/dashboard") {
       admin: property(name: "admin")
     }
   }

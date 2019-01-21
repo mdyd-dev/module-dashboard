@@ -15,7 +15,7 @@ configuration:
     validation:
       presence: true
   profiles:
-    dashboard:
+    modules/dashboard/dashboard:
       properties:
         admin:
           validation: {}
@@ -32,7 +32,8 @@ default_payload: ''
   {% include utils.input with f.last_name, type: "text" %}
   {% include utils.input with f.email, type: 'email' %}
 
-  {% include utils.input with f.profiles.dashboard.properties.admin, type: 'checkbox' %}
+  {% assign admin = f.profiles["modules/dashboard/dashboard"]["properties"]["admin"] %} 
+  {% include utils.input with admin, type: 'checkbox' %}
 
   {% include utils.submit_tag with "Save", class: "btn btn-primary btn-lg" %}
 

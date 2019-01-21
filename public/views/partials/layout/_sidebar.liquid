@@ -14,7 +14,7 @@
         </a>
       </li>
       {% capture "check_for_blog_module" %}
-        {%- include 'modules/dashboard-blog/blog/post' -%}
+        {%- include 'modules/dashboard_blog/blog/post' -%}
       {% endcapture %}
       {% unless check_for_blog_module contains "can't find partial" %}
         <li class="nav-item">

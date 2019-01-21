@@ -5,7 +5,7 @@ mutation crate_first_admin($id: ID) {
     user: {
       profiles: [
         {
-          name: "dashboard"
+          name: "modules/dashboard/dashboard"
           values: {
             properties: [
               { name: "admin", value: "1" }
@@ -17,7 +17,7 @@ mutation crate_first_admin($id: ID) {
   ) {
     id
     email
-    profile(profile_type: "dashboard") {
+    profile(profile_type: "modules/dashboard/dashboard") {
       properties
     }
   }

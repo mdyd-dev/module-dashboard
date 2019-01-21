@@ -1,5 +1,5 @@
 query get_google_analytics {
-  customizations(is_deleted: false, name: "google_analytics") {
+  customizations(is_deleted: false, name: "modules/dashboard/google_analytics") {
     total_entries
     total_pages
     results {
